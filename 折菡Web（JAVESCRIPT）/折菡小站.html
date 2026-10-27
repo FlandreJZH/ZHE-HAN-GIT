@@ -1,0 +1,83 @@
+<!DOCTYPE html >
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"content="width=device-width,initial-scale=1.0">
+<meta name="description"content="厕所的网站">
+<title>折菡小站</title>
+</head>
+<body>
+<h1>折菡小站</h1><p>此网站<strong>单</strong>为<strong><i>折菡</i></strong>所建</p><hr>
+    <style>
+        .初始{display:block;position:absolute;top:500px;left:100px;}
+        .登录{display:block;position:absolute;top:300px;left:100px;}
+        .主界面{display:block;}
+        .隐藏{display:none;}
+        .注册{display:block;position:absolute;top:150px;left:100;}
+        .button_1_1{background-color:rgb(44, 44, 126)}.button_1_2{background-color:yellow}
+    </style>
+    
+<div id="登录注册界面" class="登录注册界面">
+    <div class="初始">
+   <button onclick="click_1(this)">登录</button><br><br><button onclick="click_2(this)">注册</button>
+    </div>
+    <div class="隐藏">
+        <table border>
+            <tr><th></th><th style="color:blue">登录</th></tr>
+            <tr><td>用户</td><td><form id="用户登录"onsubmit="return false"><input action="" name="user" type="text" placeholder="请输入"></form></td></tr>
+            <tr><td>密码</td><td><form id="密码登录"onsubmit="return false"><input name="password" type="password" placeholder="请输入"></form></td></tr>
+        </table>
+         <button onclick="submit_1()">确定</button><button onclick="back_1(this)" style="position:absolute;left:170px;width:45px;height:25px">返回</button>
+    </div>
+    <div class="隐藏">
+        <div>
+            <hl style="color:red ;font-size:20px;font-weight:bold;background-color:bisque;">为得到账号获得的机会您需要参加本次入站考试。<br>并获得不少于90分。<br>满分:100</hl><hr>
+            <button onclick="var box=this.parentElement.nextElementSibling;box.className='答题';" style="border-color:transparent" class="button_1_1" onmouseover="color_turn_1(this)"onmouseout="color_turn_1(this)"><p style="color:white">开始</p></buttons>
+            <button onclick="" style="width:50px;border-color:transparent; position:absolute;left:400px"class="button_1_1" onmouseover="color_turn_1(this)"onmouseout="color_turn_1(this)"><p style="color:white">返回</p></button>
+        </div>
+        <div class="隐藏">
+         <form>
+            <h1 style="font-weight:bold">一、选择题</h1>
+            <ol>
+                <li>折菡的情郎是：<input type="radio" name="1" value="1">江昊宇<input type="radio" name="1" value="2">林少尉<input type="radio" name="1" value="3">费一帆<input type="radio" name="1" value="4">江致航</li>
+                <li>折菡的外貌特征<input type="radio"name="2" value="1">桃发粉瞳<input type="radio"name="2" value="2">黑发黑瞳<input type="radio"name="2" value="3">金发碧瞳</li>
+                <li>折菡萏<input type="radio"name="3" value=""></li>
+            </ol>
+         </form>
+        </div>
+    </div>
+    </div>
+
+    
+<div id="主界面" class="隐藏"></div>
+<script>
+function click_1(element){
+    var off=element.parentElement;off.className='隐藏';
+    var box=off.nextElementSibling;box.className='登录';
+}    
+function click_2(element)
+{
+    var off=element.parentElement;off.className="隐藏";
+    var box=off.nextElementSibling.nextElementSibling;box.className="注册";
+}
+function submit_1(element)
+{
+var check=false;
+var User_=document.getElementById('用户登录').elements['user'];
+var Password_=document.getElementById('密码登录').elements['password'];
+name_=User_.value;code_=Password_.value;var error="用户名或密码错误";
+if(true)
+{
+    User_.placeholder=error;User_.value=null;Password_.placeholder=error;Password_.value=null;
+}
+}
+function back_1(element){var box=document.getElementById('用户登录').elements['user'];box.value=null;box.placeholder="请输入";
+var box_2=document.getElementById('密码登录').elements['password'];box_2.value=null;box_2.placeholder="请输入";
+var off=element.parentElement;off.className="隐藏";var on=off.previousElementSibling;on.className="初始";}
+function color_turn_1(element){if(element.className=="button_1_1"){element.className="button_1_2"}else{element.className="button_1_1"}}
+function quetionset(){}
+</script>
+
+
+</body>
+</html>
